@@ -1,4 +1,5 @@
 using CashFlow.Api.Filters;
+using CashFlow.Api.Middleware;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +23,8 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+app.UseMiddleware<CultureMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {

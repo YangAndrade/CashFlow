@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Domain", "src\Cash
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Application", "src\CashFlow.Application\CashFlow.Application.csproj", "{40D6C8F8-CDBB-4BB1-AD39-492C29AD1A4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.communication", "src\CashFlow.communication\CashFlow.communication.csproj", "{A03BCB25-783B-4301-9393-4B9FD952F7A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Communication", "src\CashFlow.communication\CashFlow.Communication.csproj", "{A03BCB25-783B-4301-9393-4B9FD952F7A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFlow.Exception", "src\CashFlow.Exception\CashFlow.Exception.csproj", "{DD037A80-4AD5-4490-B50D-589F38B02BAF}"
 EndProject
