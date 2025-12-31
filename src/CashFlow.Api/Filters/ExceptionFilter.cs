@@ -1,4 +1,4 @@
-﻿using CashFlow.communication.Responses;
+﻿using CashFlow.Communication.Responses;
 using CashFlow.Exception;
 using CashFlow.Exception.ExceptionBase;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +23,6 @@ public class ExceptionFilter : IExceptionFilter
     {
         if(context.Exception is ErrorOnValidationException)
         {
-            // é a mesma coisa que context.Exception as ErrorOnValidationException
             var ex = (ErrorOnValidationException)context.Exception;
 
             var erroResponse = new ResponseErrorJson(ex.Erros);

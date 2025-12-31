@@ -1,6 +1,6 @@
-﻿using CashFlow.communication.Enums;
+﻿using CashFlow.Communication.Enums;
 
-namespace CashFlow.communication.Requests;
+namespace CashFlow.Communication.Requests;
 public class RequestRegisterExpensesJson
 {
     public string Title { get; set; } = string.Empty;
