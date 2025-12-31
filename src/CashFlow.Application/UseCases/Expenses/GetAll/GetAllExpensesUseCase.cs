@@ -8,11 +8,11 @@ public class GetAllExpensesUseCase(IExpensesRepository repository, IMapper mappe
 {
     private readonly IExpensesRepository _repository = repository;
     private readonly IMapper _mapper = mapper;
-    public async Task<ResponseExpenseJson> Execute()
+    public async Task<ResponseExpensesJson> Execute()
     {
         var result = await _repository.GetAllAsync();
 
-        return new ResponseExpenseJson
+        return new ResponseExpensesJson
         {
             Expenses = _mapper.Map<List<ResponseShortExpenseJson>>(result)
         };
