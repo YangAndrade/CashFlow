@@ -21,20 +21,12 @@ public class ExceptionFilter : IExceptionFilter
 
     private void HandleProjectExeption(ExceptionContext context)
     {
-        if(context.Exception is ErrorOnValidationException)
-        {
-            var ex = (ErrorOnValidationException)context.Exception;
+       
+        var cashFlowException = context.Exception as CashFlowException;
+        var erroResponse = new ResponseErrorJson(cashFlowException!.GetErros());
+        context.HttpContext.Response.StatusCode = cashFlowException.StatusCode;
+        context.Result = new ObjectResult(erroResponse);
 
-            var erroResponse = new ResponseErrorJson(ex.Erros);
-            context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-            context.Result = new BadRequestObjectResult(erroResponse);
-        }
-        else
-        {
-            var erroResponse = new ResponseErrorJson(context.Exception.Message);
-            context.HttpContext.Response.StatusCode = StatusCodes.Status400BadRequest;
-            context.Result = new BadRequestObjectResult(erroResponse);
-        }
     }
 
     private void ThrowUnknowError(ExceptionContext context)

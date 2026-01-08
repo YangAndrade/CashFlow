@@ -6,9 +6,9 @@ using CashFlow.Domain.Repositories.Expenses;
 using CashFlow.Exception.ExceptionBase;
 
 namespace CashFlow.Application.UseCases.Expenses.Register;
-public class RegisterExpenseUseCase(IExpensesRepository repository, IUnityOfWork unityOfWork, IMapper mapper) : IRegisterExpenseUseCase
+public class RegisterExpenseUseCase(IExpenseWritenOnlyRepository repository, IUnityOfWork unityOfWork, IMapper mapper) : IRegisterExpenseUseCase
 {
-    private readonly IExpensesRepository _repository = repository;
+    private readonly IExpenseWritenOnlyRepository _repository = repository;
     private readonly IUnityOfWork _unityOfWork = unityOfWork;
     private readonly IMapper _mapper = mapper;
     public async Task<ResponseRegisterExpenseJson> Execute(RequestRegisterExpensesJson request)
